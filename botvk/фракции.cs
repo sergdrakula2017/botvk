@@ -4,6 +4,7 @@ using System.Text;
 
 namespace botvk
 {
+    [Serializable]
     class фракции
     {
         public string namefr;
