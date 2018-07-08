@@ -8,10 +8,10 @@ namespace botvk
      class фракции
     {
         public string namefr;
-
+        private string _tag;
         public  string teg
         {
-            get => teg;
+            get => _tag;
             set
             {
                 if (value is null) throw new ArgumentNullException(nameof(value)/* ,"Тег не может быть ссылкой, не указывающим на экземпляр объекта"*/);
@@ -26,24 +26,13 @@ namespace botvk
                 else
                 throw new ArgumentException("Неверная длина тега", nameof(value));
 
-                teg = value.ToUpperInvariant();
+                _tag = value.ToUpperInvariant();
             }
             
         }
         public string spec;
         public string uchast;
         public string rang;
-        private object v;
-
-
-        public фракции()
-        {
-        }
-
-        public фракции(object v)
-        {
-            this.v = v;
-        }
 
         public фракции(string namefr, string teg)
         {
@@ -51,12 +40,8 @@ namespace botvk
             this.teg = teg;
 
         }
-        public void вывод ()
-        {
-            Console.WriteLine("name fr : {0}  tag : {1} " , this.namefr, this.teg);
-            Console.ReadKey();
-        } 
-        
+        public override string ToString() => teg + "." + namefr;
+
 
     }
 /*
