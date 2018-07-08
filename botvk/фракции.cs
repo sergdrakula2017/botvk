@@ -8,7 +8,7 @@ namespace botvk
      class фракции
     {
         public string namefr;
-
+        private string g;
         public  string teg
         {
             get => teg;
@@ -33,17 +33,14 @@ namespace botvk
         public string spec;
         public string uchast;
         public string rang;
-        private object v;
+        //private object v;
 
 
         public фракции()
         {
         }
 
-        public фракции(object v)
-        {
-            this.v = v;
-        }
+        фракции фракция = (фракции)v;
 
         public фракции(string namefr, string teg)
         {
