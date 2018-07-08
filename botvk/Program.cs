@@ -1,10 +1,14 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Json;
+using System.Collections.Generic;
+using System.Collections;
 
 namespace botvk
 {
     class Program
-    {  bool proverka (string aser)
+    {  /*bool proverka (string aser)
         {
             var per = aser.GetEnumerator();
             while (per.MoveNext())
@@ -13,19 +17,23 @@ namespace botvk
             }
 
 
-        }
+        }*/
         static void Main(string[] args)
         {
             фракции фракция = new фракции();
+            Console.Write("Введите: имя фракции тег ");
             фракция.namefr = Console.ReadLine( );
             фракция.teg = Console.ReadLine();
-            foreach (char bukva in фракция.teg.Where(char.IsUpper))
-                Console.WriteLine("{0} в верхнем регистре ", bukva);
-            Console.ReadKey();
-            string.Empty.ToUpper
-                
-      
-         }
+            
+            //string.Empty.ToUpper
+
+            
+            //****
+            List<фракции> фр = new List<фракции>();
+            фр.Add(new фракции(фракция.teg, фракция.namefr));
+            foreach (фракции ф in фр) ф.вывод();
+
+        }
     }
 
 }

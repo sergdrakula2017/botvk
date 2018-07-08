@@ -5,13 +5,59 @@ using System.Text;
 namespace botvk
 {
     [Serializable]
-    class фракции
+     class фракции
     {
         public string namefr;
-        public string teg;
+
+        public  string teg
+        {
+            get => teg;
+            set
+            {
+                if (value is null) throw new ArgumentNullException(nameof(value)/* ,"Тег не может быть ссылкой, не указывающим на экземпляр объекта"*/);
+                /*foreach (char bukva in teg)
+                {
+                    if (Char.IsUpper(bukva))
+                        Console.WriteLine("{0} в верхнем регистре ", bukva);
+                }*/
+
+                if (value.Length == 3)
+                    teg = value;
+                else
+                throw new ArgumentException("Неверная длина тега", nameof(value));
+
+                teg = value.ToUpperInvariant();
+            }
+            
+        }
         public string spec;
         public string uchast;
         public string rang;
+        private object v;
+
+
+        public фракции()
+        {
+        }
+
+        public фракции(object v)
+        {
+            this.v = v;
+        }
+
+        public фракции(string namefr, string teg)
+        {
+            this.namefr = namefr;
+            this.teg = teg;
+
+        }
+        public void вывод ()
+        {
+            Console.WriteLine("name fr : {0}  tag : {1} " , this.namefr, this.teg);
+            Console.ReadKey();
+        } 
+        
+
     }
 /*
     Фракция:
