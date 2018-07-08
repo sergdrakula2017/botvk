@@ -22,11 +22,11 @@ namespace botvk
                 }*/
 
                 if (value.Length == 3)
-                    teg = value;
+                    _tag = value.ToUpperInvariant();
                 else
                 throw new ArgumentException("Неверная длина тега", nameof(value));
 
-                _tag = value.ToUpperInvariant();
+                
             }
             
         }
